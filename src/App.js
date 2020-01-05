@@ -22,7 +22,7 @@ class App extends React.Component {
   }
   render() {
     console.log(this.state);
-    const isLoading = this.state;
+    const isLoading = this.state.isLoading;
     if (isLoading) {
       return <h1>Loading ...</h1>;
     }
