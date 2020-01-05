@@ -17,6 +17,7 @@ class Slider extends Component {
         <div>
           {this.props.data.map(article => (
             <Card
+              image={article.urlToImage}
               title={article.title}
               description={article.description}
               key={article.title}
