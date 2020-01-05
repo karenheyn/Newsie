@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Slider.css";
+import Card from "../Card/Card";
 
 class Slider extends Component {
   constructor(props) {
@@ -11,9 +12,11 @@ class Slider extends Component {
       <div>
         <h1>Top Stories</h1>
         <div className='slider-container'></div>
-        <div className='previous-button'>!</div>
-        <div> Content</div>
-        <div classname='next-button'>!</div>
+        <button className='previous-button'>!</button>
+        <div>
+          <Card />
+        </div>
+        <button className='next-button'>!</button>
       </div>
     );
   }
