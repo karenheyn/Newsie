@@ -13,12 +13,15 @@ class App extends React.Component {
   }
   componentDidMount() {
     this.setState({ isLoading: true });
-    fetch(url)
-      .then(res => res.json)
-      .then(data => this.setState({ data: data }))
-      .catch(err => console.log("error"));
+    fetch(
+      "https://newsapi.org/v2/top-headlines?country=us&apiKey=37c291dbdee64f5c9b9601e9033fca5f"
+    )
+      .then(res => res.json())
+      .then(newsdata => this.setState({ data: newsdata, isLoading: false }))
+      .catch(err => console.log(err));
   }
   render() {
+    console.log(this.state);
     const isLoading = this.state;
     if (isLoading) {
       return <h1>Loading ...</h1>;
