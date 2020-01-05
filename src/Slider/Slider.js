@@ -15,7 +15,13 @@ class Slider extends Component {
         <div className='slider-container'></div>
         <button className='previous-button'>previous</button>
         <div>
-          <Card data={this.props.data} />
+          {this.props.data.map(article => (
+            <Card
+              title={article.title}
+              description={article.description}
+              key={article.title}
+            />
+          ))}
         </div>
         <button className='next-button'>next</button>
       </div>

@@ -9,11 +9,8 @@ const Card = props => {
       <div>
         <img src='https://www.placecage.com/c/200/300' alt='poo'></img>
         <div className='card-overlay'>
-          <h3>headline</h3>
-          <p>
-            content lorem ipsum dolor sit amet lorem ipsum. lorem ipsum dolor
-            sit amet lorem loem.
-          </p>
+          <h3>{props.title}</h3>
+          <p>{props.description}</p>
         </div>
       </div>
     </div>
