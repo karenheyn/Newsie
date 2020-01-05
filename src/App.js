@@ -20,7 +20,7 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
   render() {
-    console.log(this.state);
+    console.log(this.state); //remove later
     const isLoading = this.state.isLoading;
     if (isLoading) {
       return <h1>Loading ...</h1>; //this is going to be a loading animation
