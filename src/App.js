@@ -13,9 +13,7 @@ class App extends React.Component {
   }
   componentDidMount() {
     this.setState({ isLoading: true });
-    fetch(
-      "https://newsapi.org/v2/top-headlines?country=us&apiKey=37c291dbdee64f5c9b9601e9033fca5f"
-    )
+    fetch(url)
       .then(res => res.json())
       .then(newsdata => this.setState({ data: newsdata, isLoading: false }))
       .catch(err => console.log(err));
