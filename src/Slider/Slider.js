@@ -12,11 +12,11 @@ class Slider extends Component {
       <div>
         <h1>Top Stories</h1>
         <div className='slider-container'></div>
-        <button className='previous-button'>!</button>
+        <button className='previous-button'>previous</button>
         <div>
           <Card />
         </div>
-        <button className='next-button'>!</button>
+        <button className='next-button'>next</button>
       </div>
     );
   }

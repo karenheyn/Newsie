@@ -8,7 +8,7 @@ const Card = props => {
     <div className='card-container'>
       <div>
         <img src='https://www.placecage.com/c/200/300' alt='poo'></img>
-        <h3>this is a headline</h3>
+        <div className='card-overlay'>this is a headline</div>
       </div>
     </div>
   );
