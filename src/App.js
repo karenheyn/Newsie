@@ -16,11 +16,13 @@ class App extends React.Component {
     this.setState({ isLoading: true });
     fetch(url)
       .then(res => res.json())
-      .then(newsdata => this.setState({ data: newsdata, isLoading: false }))
+      .then(newsdata =>
+        this.setState({ data: newsdata.articles, isLoading: false })
+      )
       .catch(err => console.log(err));
   }
   render() {
-    console.log(this.state); //remove later
+    console.log(this.state.data); //remove later
     const isLoading = this.state.isLoading;
     if (isLoading) {
       return <h1>Loading ...</h1>; //this is going to be a loading animation
@@ -30,7 +32,7 @@ class App extends React.Component {
         <nav className='nav'>News </nav>
         <div className='content-container'>
           newsynews
-          <Slider />
+          <Slider data={this.state.data} />
         </div>
         <div className='content-container'>newsynews</div>
         <div className='content-container'>newsynews</div>

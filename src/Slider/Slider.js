@@ -8,13 +8,14 @@ class Slider extends Component {
     this.state = {};
   }
   render() {
+    console.log(this.props.data[0]);
     return (
       <div>
         <h1>Top Stories</h1>
         <div className='slider-container'></div>
         <button className='previous-button'>previous</button>
         <div>
-          <Card />
+          <Card data={this.props.data} />
         </div>
         <button className='next-button'>next</button>
       </div>

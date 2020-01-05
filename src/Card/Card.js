@@ -8,7 +8,13 @@ const Card = props => {
     <div className='card-container'>
       <div>
         <img src='https://www.placecage.com/c/200/300' alt='poo'></img>
-        <div className='card-overlay'>this is a headline</div>
+        <div className='card-overlay'>
+          <h3>headline</h3>
+          <p>
+            content lorem ipsum dolor sit amet lorem ipsum. lorem ipsum dolor
+            sit amet lorem loem.
+          </p>
+        </div>
       </div>
     </div>
   );
