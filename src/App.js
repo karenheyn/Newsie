@@ -22,6 +22,11 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
   render() {
+    const articlesWithIndex = this.state.data.map((article, index) => ({
+      //adds key value of index to obj arr so it can be used for slider
+      ...article,
+      index: index
+    }));
     console.log(this.state.data); //remove later
     const isLoading = this.state.isLoading;
     if (isLoading) {
@@ -32,7 +37,7 @@ class App extends React.Component {
         <nav className='nav'>News </nav>
         <div className='content-container'>
           newsynews
-          <Slider data={this.state.data} />
+          <Slider data={articlesWithIndex} />
         </div>
         <div className='content-container'>newsynews</div>
         <div className='content-container'>newsynews</div>
