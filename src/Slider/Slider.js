@@ -18,28 +18,38 @@ class Slider extends Component {
     let newIndex = this.state.currentIndex.index - 1;
     this.setState({ currentIndex: this.state.allArticles[newIndex] });
   };
+
   render() {
     console.log();
     const article = this.state.allArticles.length
       ? this.state.currentIndex
       : null;
-
     return (
       <div>
         <h1>Top Stories</h1>
         <div className='slider-container'></div>
-        <button className='previous-button' onClick={this.prevArticle}>
+        <button
+          className='previous-button'
+          onClick={this.prevArticle}
+          disabled={
+            this.state.allArticles.length
+              ? this.state.currentIndex.index === 0
+              : null
+          }
+        >
           previous
         </button>
-        <div>
-          {this.state.allArticles.length ? (
-            <Card
-              image={article.urlToImage}
-              title={article.title}
-              description={article.description}
-              key={article.title}
-            />
-          ) : null}
+        <div className='cards-slider'>
+          {this.state.allArticles.length
+            ? this.state.allArticles.map(article => (
+                <Card
+                  image={article.urlToImage}
+                  title={article.title}
+                  description={article.description}
+                  key={article.title}
+                />
+              ))
+            : null}
           {/* {this.props.data.map(article => (
             <Card
               image={article.urlToImage}
@@ -49,7 +59,16 @@ class Slider extends Component {
             />
           ))} */}
         </div>
-        <button className='next-button' onClick={this.nextArticle}>
+        <button
+          className='next-button'
+          onClick={this.nextArticle}
+          disabled={
+            this.state.allArticles.length
+              ? this.state.currentIndex.index ===
+                this.state.allArticles.length - 1
+              : null
+          }
+        >
           next
         </button>
       </div>
