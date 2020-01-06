@@ -2,9 +2,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+}
+
+#root {
+  overflow: hidden;
+}
+
+body {
+  overflow: hidden;
 }
 
 .content-container {
-  min-height: 100px;
+  min-height: 450px;
   border: 2px solid black;
+  overflow: hidden;
+  margin: 0 auto;
 }

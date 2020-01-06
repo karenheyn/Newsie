@@ -1,4 +1,17 @@
-.cards-slider {
+.slider-container {
     position: relative;
     margin: 0 auto;
+    text-align: center;
+    min-height: 342px;
+}
+
+
+
+.cards-slider {
+    display: flex;
+    min-height: 300px;
+    position: absolute;
+    transition: transform 300ms ease-in-out;
+    background: black;
+    padding: 10px;
 }

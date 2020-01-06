@@ -25,9 +25,8 @@ class Slider extends Component {
       ? this.state.currentIndex
       : null;
     return (
-      <div>
+      <div className='slider-container'>
         <h1>Top Stories</h1>
-        <div className='slider-container'></div>
         <button
           className='previous-button'
           onClick={this.prevArticle}
@@ -39,26 +38,6 @@ class Slider extends Component {
         >
           previous
         </button>
-        <div className='cards-slider'>
-          {this.state.allArticles.length
-            ? this.state.allArticles.map(article => (
-                <Card
-                  image={article.urlToImage}
-                  title={article.title}
-                  description={article.description}
-                  key={article.title}
-                />
-              ))
-            : null}
-          {/* {this.props.data.map(article => (
-            <Card
-              image={article.urlToImage}
-              title={article.title}
-              description={article.description}
-              key={article.title}
-            />
-          ))} */}
-        </div>
         <button
           className='next-button'
           onClick={this.nextArticle}
@@ -71,6 +50,39 @@ class Slider extends Component {
         >
           next
         </button>
+        <div className='cards-slider-wrapper'>
+          <div
+            className='cards-slider'
+            style={
+              this.state.allArticles.length
+                ? {
+                    transform: `translateX(-${this.state.currentIndex.index *
+                      (100 / this.state.allArticles.length)}%)`
+                  }
+                : null
+            }
+          >
+            {this.state.allArticles.length
+              ? this.state.allArticles.map(article => (
+                  <Card
+                    className='card'
+                    image={article.urlToImage}
+                    title={article.title}
+                    description={article.description}
+                    key={article.title}
+                  />
+                ))
+              : null}
+            {/* {this.props.data.map(article => (
+            <Card
+              image={article.urlToImage}
+              title={article.title}
+              description={article.description}
+              key={article.title}
+            />
+          ))} */}
+          </div>
+        </div>
       </div>
     );
   }
