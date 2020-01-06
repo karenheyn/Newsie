@@ -9,23 +9,21 @@ class Slider extends Component {
       allArticles: this.props.data,
       currentIndex: this.props.data[0]
     };
-    this.nextArticle = this.nextArticle.bind(this);
-    this.prevArticle = this.prevArticle.bind(this);
   }
   nextArticle = () => {
     let newIndex = this.state.currentIndex.index + 1;
-    this.setState({ currentIndex: this.props[newIndex] });
+    this.setState({ currentIndex: this.state.allArticles[newIndex] });
   };
   prevArticle = () => {
     let newIndex = this.state.currentIndex.index - 1;
-    this.setState({ currentIndex: this.props[newIndex] });
+    this.setState({ currentIndex: this.state.allArticles[newIndex] });
   };
   render() {
-    const article = this.state.currentIndex;
-    console.log(this.state.currentIndex);
-    if (this.state.allArticles.length > 0) {
-      console.log(this.state.currentIndex.index);
-    }
+    console.log();
+    const article = this.state.allArticles.length
+      ? this.state.currentIndex
+      : null;
+
     return (
       <div>
         <h1>Top Stories</h1>
@@ -34,15 +32,14 @@ class Slider extends Component {
           previous
         </button>
         <div>
-          <Card data={article} />
-          {/* {this.state.allArticles.length > 0 ? (
+          {this.state.allArticles.length ? (
             <Card
-              image={this.state.currentIndex.urlToImage}
-              title={this.state.currentIndex.title}
-              description={this.state.currentIndex.description}
-              key={this.state.currentIndex.title}
+              image={article.urlToImage}
+              title={article.title}
+              description={article.description}
+              key={article.title}
             />
-          ) : null} */}
+          ) : null}
           {/* {this.props.data.map(article => (
             <Card
               image={article.urlToImage}

@@ -7,7 +7,7 @@ const Card = props => {
   return (
     <div className='card-container'>
       <div>
-        <img src={props.urlToImage} alt='poo'></img>
+        <img src={props.image} alt='poo'></img>
         <div className='card-overlay'>
           <h3>{props.title}</h3>
           <p>{props.description}</p>
