@@ -5,17 +5,13 @@
 
 }
 
-#root {
-  overflow: hidden;
-}
-
-body {
-  overflow: hidden;
-}
 
 .content-container {
   min-height: 450px;
   border: 2px solid black;
   overflow: hidden;
-  margin: 0 auto;
+  width: 100%;
+  /* margin: 0 auto; */
+  /* display: flex;
+  flex-direction: column; */
 }

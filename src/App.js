@@ -2,22 +2,37 @@ import React from "react";
 import "./App.css";
 import Slider from "./Slider/Slider";
 const key = "37c291dbdee64f5c9b9601e9033fca5f";
-const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${key}`;
+const urlOne = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${key}`;
+// const urlTwo = `https://newsapi.org/v2/sources?language=en&country=us&apiKey=${key}`;
+
+const urlTwo = `https://newsapi.org/v2/everything?q=technology&from=${getDateParam()}&sortBy=publishedAt&apiKey=${key}`;
+
+function getDateParam() {
+  const d = new Date();
+  d.setDate(d.getDate() - 2);
+  const twoDaysAgo = d.toISOString();
+  return twoDaysAgo;
+}
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
+      catData: [],
       isLoading: false
     };
   }
   componentDidMount() {
     this.setState({ isLoading: true });
-    fetch(url)
-      .then(res => res.json())
-      .then(newsdata =>
-        this.setState({ data: newsdata.articles, isLoading: false })
+    Promise.all([fetch(urlOne), fetch(urlTwo)])
+      .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
+      .then(([data1, data2]) =>
+        this.setState({
+          data: data1.articles,
+          catData: data2,
+          isLoading: false
+        })
       )
       .catch(err => console.log(err));
   }
@@ -27,7 +42,7 @@ class App extends React.Component {
       ...article,
       index: index
     }));
-    console.log(this.state.data); //remove later
+    console.log(this.state.catData); //remove later
     const isLoading = this.state.isLoading;
     if (isLoading) {
       return <h1>Loading ...</h1>; //this is going to be a loading animation

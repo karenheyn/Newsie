@@ -11,8 +11,10 @@ class Slider extends Component {
     };
   }
   nextArticle = () => {
-    let newIndex = this.state.currentIndex.index + 1;
-    this.setState({ currentIndex: this.state.allArticles[newIndex] });
+    if (this.state.currentIndex.index < this.state.allArticles.length - 1) {
+      let newIndex = this.state.currentIndex.index + 1;
+      this.setState({ currentIndex: this.state.allArticles[newIndex] });
+    }
   };
   prevArticle = () => {
     let newIndex = this.state.currentIndex.index - 1;
@@ -27,29 +29,7 @@ class Slider extends Component {
     return (
       <div className='slider-container'>
         <h1>Top Stories</h1>
-        <button
-          className='previous-button'
-          onClick={this.prevArticle}
-          disabled={
-            this.state.allArticles.length
-              ? this.state.currentIndex.index === 0
-              : null
-          }
-        >
-          previous
-        </button>
-        <button
-          className='next-button'
-          onClick={this.nextArticle}
-          disabled={
-            this.state.allArticles.length
-              ? this.state.currentIndex.index ===
-                this.state.allArticles.length - 1
-              : null
-          }
-        >
-          next
-        </button>
+
         <div className='cards-slider-wrapper'>
           <div
             className='cards-slider'
@@ -82,6 +62,31 @@ class Slider extends Component {
             />
           ))} */}
           </div>
+        </div>
+        <div className='button-container'>
+          <button
+            className='previous-button'
+            onClick={this.prevArticle}
+            disabled={
+              this.state.allArticles.length
+                ? this.state.currentIndex.index === 0
+                : null
+            }
+          >
+            &lt;
+          </button>
+          <button
+            className='next-button'
+            onClick={this.nextArticle}
+            disabled={
+              this.state.allArticles.length
+                ? this.state.currentIndex.index ===
+                  this.state.allArticles.length - 1
+                : null
+            }
+          >
+            &gt;
+          </button>
         </div>
       </div>
     );
