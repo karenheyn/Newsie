@@ -2,7 +2,7 @@
     position: relative;
     margin: 0 auto;
     text-align: center;
-    min-height: 500px;
+
 }
 
 
@@ -15,6 +15,10 @@
     background: black;
     padding: 10px;
     margin-top: 10px;
+}
+
+.cards-slider-wrapper {
+    background: black;
 }
 
 .previous-button,
@@ -40,3 +44,9 @@
 button:focus {
     outline: none;
 }
+
+/* @media only screen and (min-width: 600px) {
+    .cards-slider {
+        left: 14%;
+    }
+} */

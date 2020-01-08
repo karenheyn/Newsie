@@ -23,13 +23,11 @@ class Slider extends Component {
 
   render() {
     console.log();
-    const article = this.state.allArticles.length
-      ? this.state.currentIndex
-      : null;
+    // const article = this.state.allArticles.length
+    //   ? this.state.currentIndex
+    //   : null;
     return (
       <div className='slider-container'>
-        <h1>Top Stories</h1>
-
         <div className='cards-slider-wrapper'>
           <div
             className='cards-slider'
