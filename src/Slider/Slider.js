@@ -28,6 +28,7 @@ class Slider extends Component {
     //   : null;
     return (
       <div className='slider-container'>
+        <i class='fas fa-question-circle'></i>
         <div className='cards-slider-wrapper'>
           <div
             className='cards-slider'

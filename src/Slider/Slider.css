@@ -12,7 +12,7 @@
     min-height: 300px;
     position: absolute;
     transition: transform 300ms ease-in-out;
-    background: black;
+    /* background: black; */
     padding: 10px;
     margin-top: 10px;
 }
@@ -24,13 +24,14 @@
 .previous-button,
 .next-button {
     position: relative;
-    height: 100px;
+    height: 80px;
     width: 80px;
     font-size: 50px;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: red;
     color: black;
-    border: none;
     font-weight: bolder;
+    background: none;
+    border: none;
 }
 
 .button-container {
