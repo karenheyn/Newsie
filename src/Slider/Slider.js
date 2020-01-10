@@ -49,6 +49,7 @@ class Slider extends Component {
                     title={article.title}
                     description={article.description}
                     key={article.title}
+                    url={article.url}
                   />
                 ))
               : null}

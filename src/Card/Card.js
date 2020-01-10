@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 const img = "https://fillmurray.com/300/300";
 
 const Card = props => {
-  console.log(props.prublishedAt);
+  console.log(props.url);
   return (
     <div className='card-container'>
       <div>
