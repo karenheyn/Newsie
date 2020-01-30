@@ -28,6 +28,7 @@ class Slider extends Component {
     //   : null;
     return (
       <div className='slider-container'>
+        <i class='fas fa-question-circle'></i>
         <div className='cards-slider-wrapper'>
           <div
             className='cards-slider'
@@ -48,6 +49,7 @@ class Slider extends Component {
                     title={article.title}
                     description={article.description}
                     key={article.title}
+                    url={article.url}
                   />
                 ))
               : null}

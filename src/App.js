@@ -1,4 +1,6 @@
 import React from "react";
+import { BrowserRouter, Route, Link } from "react-router-dom";
+
 import "./App.css";
 import Slider from "./Slider/Slider";
 const key = "37c291dbdee64f5c9b9601e9033fca5f";
@@ -113,36 +115,41 @@ class App extends React.Component {
       return <h1>Loading ...</h1>; //this is going to be a loading animation
     }
     return (
-      <div className='App'>
-        <nav className='nav'>News </nav>
-        <div className='content-container'>
-          <Slider data={articlesWithIndex} />
-        </div>
-        <div className='content-container'>
-          newsynews <Slider data={businessArticlesWithIndex} />
-        </div>
-        <div className='content-container'>
-          newsynews <Slider data={techArticlesWithIndex} />
-        </div>
+      <BrowserRouter>
+        <div className='App'>
+          <nav className='nav'>News </nav>
+          <div className='content-container'>
+            <h3>Top News</h3>
+            <Slider data={articlesWithIndex} />
+          </div>
+          <div className='content-container'>
+            <h3>Business</h3>
+            <Slider data={businessArticlesWithIndex} />
+          </div>
+          <div className='content-container'>
+            <h3>Technology</h3>
+            <Slider data={techArticlesWithIndex} />
+          </div>
 
-        <div className='content-container'>
-          newsynews
-          <Slider data={sportsArticlesWithIndex} />
+          <div className='content-container'>
+            <h3>Sports</h3>
+            <Slider data={sportsArticlesWithIndex} />
+          </div>
+          <div className='content-container'>
+            <h3>Entertainment</h3>
+            <Slider data={entertainmentArticlesWithIndex} />
+          </div>
+          <div className='content-container'>
+            <h3>Science</h3>
+            <Slider data={scienceArticlesWithIndex} />
+          </div>
+          <div className='content-container'>
+            <h3>health</h3>
+            <Slider data={healthArticlesWithIndex} />
+          </div>
+          <footer></footer>
         </div>
-        <div className='content-container'>
-          newsynews
-          <Slider data={entertainmentArticlesWithIndex} />
-        </div>
-        <div className='content-container'>
-          newsynews
-          <Slider data={scienceArticlesWithIndex} />
-        </div>
-        <div className='content-container'>
-          newsynews
-          <Slider data={healthArticlesWithIndex} />
-        </div>
-        <footer></footer>
-      </div>
+      </BrowserRouter>
     );
   }
 }
