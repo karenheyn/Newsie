@@ -35,7 +35,7 @@ class Slider extends Component {
               this.state.allArticles.length
                 ? {
                     transform: `translateX(-${this.state.currentIndex.index *
-                      (100 / this.state.allArticles.length)}%)`
+                      (99.85 / this.state.allArticles.length)}%)`
                   }
                 : null
             }
