@@ -117,34 +117,34 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className='App'>
-          <nav className='nav'>News </nav>
+          <h1 className='heading'>News Hub</h1>
           <div className='content-container'>
-            <h3>Top News</h3>
+            <h3 className='category'>Top News</h3>
             <Slider data={articlesWithIndex} />
           </div>
           <div className='content-container'>
-            <h3>Business</h3>
+            <h3 className='category'>Business</h3>
             <Slider data={businessArticlesWithIndex} />
           </div>
           <div className='content-container'>
-            <h3>Technology</h3>
+            <h3 className='category'>Technology</h3>
             <Slider data={techArticlesWithIndex} />
           </div>
 
           <div className='content-container'>
-            <h3>Sports</h3>
+            <h3 className='category'>Sports</h3>
             <Slider data={sportsArticlesWithIndex} />
           </div>
           <div className='content-container'>
-            <h3>Entertainment</h3>
+            <h3 className='category'>Entertainment</h3>
             <Slider data={entertainmentArticlesWithIndex} />
           </div>
           <div className='content-container'>
-            <h3>Science</h3>
+            <h3 className='category'>Science</h3>
             <Slider data={scienceArticlesWithIndex} />
           </div>
           <div className='content-container'>
-            <h3>health</h3>
+            <h3 className='category'>health</h3>
             <Slider data={healthArticlesWithIndex} />
           </div>
           <footer></footer>

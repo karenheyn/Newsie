@@ -46,6 +46,13 @@ button:focus {
     outline: none;
 }
 
+.next-button:active,
+.previous-button:active {
+    transform: scale(.8);
+}
+
+
+
 /* @media only screen and (min-width: 600px) {
     .cards-slider {
         left: 14%;

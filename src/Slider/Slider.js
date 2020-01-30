@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Slider.css";
 import Card from "../Card/Card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 class Slider extends Component {
   constructor(props) {
@@ -28,7 +30,6 @@ class Slider extends Component {
     //   : null;
     return (
       <div className='slider-container'>
-        <i class='fas fa-question-circle'></i>
         <div className='cards-slider-wrapper'>
           <div
             className='cards-slider'
@@ -53,6 +54,7 @@ class Slider extends Component {
                   />
                 ))
               : null}
+
             {/* {this.props.data.map(article => (
             <Card
               image={article.urlToImage}
@@ -73,7 +75,7 @@ class Slider extends Component {
                 : null
             }
           >
-            &lt;
+            <FontAwesomeIcon icon={faArrowLeft} />
           </button>
           <button
             className='next-button'
@@ -85,7 +87,7 @@ class Slider extends Component {
                 : null
             }
           >
-            &gt;
+            <FontAwesomeIcon icon={faArrowRight} />
           </button>
         </div>
       </div>
